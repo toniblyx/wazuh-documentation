@@ -21,7 +21,7 @@ How it works
 
 Syscheck is an essential component of intrusion detection.
 
-.. thumbnail:: ../../images/manual/fim/fim-flow.png
+.. thumbnail:: ../../../images/manual/fim/fim-flow.png
   :title: File integrity monitoring
   :align: center
   :width: 100%
