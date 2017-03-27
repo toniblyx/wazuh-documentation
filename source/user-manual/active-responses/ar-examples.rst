@@ -1,4 +1,4 @@
-.. _remediation-examples:
+.. _ar-examples:
 
 Examples
 ========
@@ -14,7 +14,7 @@ Windows automatic remediation
 -----------------------------
 
 In this example, a command with the name *"win_rout-null"* is configured to use the *"route-null.cmd"* script using the data element *"srcip"*.  The **Active response** is configured to initiate the *"win_rout-null"* command on the local host when the  rule has a higher alert level than 7.  This is a *Stateful* response with a timeout set at 900 seconds.
- 
+
 Command::
 
   <command>
@@ -79,9 +79,9 @@ Active response::
 Add an IP to the iptables deny list
 -----------------------------------
 
-In this example, a command with the name *"firewall-drop"* is configured to use the *"firewall-drop.sh"* script using the data element *"scrip"*.  The **Active response** is configured to initiate the *"firewall-block"* command on all systems when a rule in either the *"authentificaiton_failed"* or *"authentification_failures"* rule group fires.  This is a *Stateful* response with a timeout of 700 seconds.  The repeated offenders parameter increases the timeout period for each subsequent offence by a specific IP address.  
+In this example, a command with the name *"firewall-drop"* is configured to use the *"firewall-drop.sh"* script using the data element *"scrip"*.  The **Active response** is configured to initiate the *"firewall-block"* command on all systems when a rule in either the *"authentificaiton_failed"* or *"authentification_failures"* rule group fires.  This is a *Stateful* response with a timeout of 700 seconds.  The repeated offenders parameter increases the timeout period for each subsequent offence by a specific IP address.
 
-**Note: This parameter is specified in minutes rather than seconds.** 
+**Note: This parameter is specified in minutes rather than seconds.**
 
 Command::
 
@@ -103,9 +103,9 @@ Active response::
 
 Stateful command
 ----------------
-The action of a stateful response continues for a specified period of time. 
+The action of a stateful response continues for a specified period of time.
 
-In this example, a command with the name *"host-deny"* is configured to use the *"host-deny.sh"* script using the data element *"scrip"*.  The **Active response** is configured to initiate the *"host-deny"* command on the local host when a rule with a higher alert level than 6 is fired.  
+In this example, a command with the name *"host-deny"* is configured to use the *"host-deny.sh"* script using the data element *"scrip"*.  The **Active response** is configured to initiate the *"host-deny"* command on the local host when a rule with a higher alert level than 6 is fired.
 
 Command::
 
@@ -130,9 +130,9 @@ More info: :ref:`command <reference_ossec_commands>`
 Stateless command
 -----------------
 
-The action of a stateless command is a one-time action that will not be undone. 
+The action of a stateless command is a one-time action that will not be undone.
 
-In this example, a command with the name *"mail-test"* is configured to use the *"mail-test.sh"* script with no data element.  The **Active response** is configured to initiate the *"mail-test"* command on the server when the rule with ID 1002 fires.  
+In this example, a command with the name *"mail-test"* is configured to use the *"mail-test.sh"* script with no data element.  The **Active response** is configured to initiate the *"mail-test"* command on the server when the rule with ID 1002 fires.
 
 Command::
 
