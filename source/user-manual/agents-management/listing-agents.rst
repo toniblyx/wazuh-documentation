@@ -5,12 +5,12 @@ Listing agents
 
 There are 3 ways to list the registered agents in a manager:
 
-#. `Listing agents using Wazuh app`_
-#. `Listing agents using API`_
-#. `Listing agents with agent_control binary`_
+#. `Using Wazuh app`_
+#. `Using RESTful API`_
+#. `Using the command line`_
 
-Listing agents using Wazuh app
---------------------------------
+Using Wazuh app
+---------------
 Acces to the Wazuh app and go to *Agents* tab:
 
 .. thumbnail:: ../../images/manual/managing-agents/listing-agents-app.png
@@ -18,8 +18,8 @@ Acces to the Wazuh app and go to *Agents* tab:
     :align: center
     :width: 100%
 
-Listing agents using API
---------------------------------
+Using RESTful API
+-----------------
 
 The request :ref:`GET /agents <request_list>` returns the list of available agents.
 
@@ -65,8 +65,8 @@ The request :ref:`GET /agents <request_list>` returns the list of available agen
        }
     }
 
-Listing agents with agent_control binary
---------------------------------------------
+Using the command line
+----------------------
 
 The binary */var/ossec/bin/agent_control* allow us to retrieve the list of available agents:
 
