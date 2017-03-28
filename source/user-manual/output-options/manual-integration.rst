@@ -1,7 +1,7 @@
 .. _manual_integration:
 
-Integration with external APIs
-==================================
+External APIs integration
+=========================
 
 Integrator is a new daemon that allows the connection of Wazuh to external APIs and alerting tools such as Slack and PagerDuty.
 

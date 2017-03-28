@@ -8,7 +8,7 @@ Wazuh may be configured to send alerts to syslog as follows:
 Configuration
 -------------
 
-Syslog output is configured in ``ossec.conf``. All the available options are detailed in :ref:`Syslog output <reference_ossec_syslog_output>`
+Syslog output is configured in ``ossec.conf``. All the available options are detailed in :doc:`Syslog output <../reference/configuration/ossec-conf/syslog-output>`
 
 ::
 
