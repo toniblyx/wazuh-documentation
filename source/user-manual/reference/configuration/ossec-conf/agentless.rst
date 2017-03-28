@@ -77,6 +77,7 @@ This determines whether the check type is periodic or periodic_diff.
 |                    |               |                                                                                  |
 |                    |               | Changes are alerted on, similar to file integrity monitoring.                    |
 +--------------------+---------------+----------------------------------------------------------------------------------+
+
 arguments
 ^^^^^^^^^
 
