@@ -22,45 +22,45 @@ Wazuh manager configuration sections
 
 Below is a comprehensive list of configuration sections, listed in two different tables to clearly differentiate configuration options that do apply to the manager or to the agent which usually runs in the monitored host, but also runs locally in the Wazuh manager system. All of these sections must be located within the top-level ``<ossec_config>`` tag.
 
-+--------------------------------------------------+----------------------------------------------------------+
-| Manager specific configuration options           | Description                                              |
-+==================================================+==========================================================+
-| `global  <global.html>`_                         | Global configuration options (output and email settings) |
-+--------------------------------------------------+----------------------------------------------------------+
-| `alerts <alerts.html>`_                          | Log alert and email settings                             |
-+--------------------------------------------------+----------------------------------------------------------+
-| `email_alerts <email_alerts.html>`_              | Granular email alert settings                            |
-+--------------------------------------------------+----------------------------------------------------------+
-| `remote <remote.html>`_                          | Configuration settings for remote connections            |
-+--------------------------------------------------+----------------------------------------------------------+
-| `ruleset <rules.html>`_                          | Rules and decoders options                               |
-+--------------------------------------------------+----------------------------------------------------------+
-| `command <commands.html>`_                       | Command configuration for active responses               |
-+--------------------------------------------------+----------------------------------------------------------+
-| `agentless <agentless.html>`_                    | Configuration options for agentless monitoring           |
-+--------------------------------------------------+----------------------------------------------------------+
-| `database_output <database-output.html>`_        | Database output configuration settings                   |
-+--------------------------------------------------+----------------------------------------------------------+
-| `integration  <integration.html>`_               | Integration options for third party tools                |
-+--------------------------------------------------+----------------------------------------------------------+
-| `reports <reports.html>`_                        | Options for alert reports                                |
-+--------------------------------------------------+----------------------------------------------------------+
-| `syslog_output <syslog-output.html>`_            | Syslog output configuration settings                     |
-+--------------------------------------------------+----------------------------------------------------------+
++-----------------------------------------------------------------------------------+----------------------------------------------------------+
+| Manager specific configuration options                                            | Description                                              |
++===================================================================================+==========================================================+
+| :doc:`global  <../reference/configuration/ossec-conf/global>`                     | Global configuration options (output and email settings) |
++-----------------------------------------------------------------------------------+----------------------------------------------------------+
+| :doc:`alerts <../reference/configuration/ossec-conf/alerts>`                      | Log alert and email settings                             |
++-----------------------------------------------------------------------------------+----------------------------------------------------------+
+| :doc:`email_alerts <../reference/configuration/ossec-conf/email_alerts>`          | Granular email alert settings                            |
++-----------------------------------------------------------------------------------+----------------------------------------------------------+
+| :doc:`remote <../reference/configuration/ossec-conf/remote>`                      | Configuration settings for remote connections            |
++-----------------------------------------------------------------------------------+----------------------------------------------------------+
+| :doc:`ruleset <../reference/configuration/ossec-conf/rules>`                      | Rules and decoders options                               |
++-----------------------------------------------------------------------------------+----------------------------------------------------------+
+| :doc:`command <../reference/configuration/ossec-conf/commands>`                   | Command configuration for active responses               |
++-----------------------------------------------------------------------------------+----------------------------------------------------------+
+| :doc:`agentless <../reference/configuration/ossec-conf/agentless>`                | Configuration options for agentless monitoring           |
++-----------------------------------------------------------------------------------+----------------------------------------------------------+
+| :doc:`database_output <../reference/configuration/ossec-conf/database-output>`    | Database output configuration settings                   |
++-----------------------------------------------------------------------------------+----------------------------------------------------------+
+| :doc:`integration  <../reference/configuration/ossec-conf/integration>`           | Integration options for third party tools                |
++-----------------------------------------------------------------------------------+----------------------------------------------------------+
+| :doc:`reports <../reference/configuration/ossec-conf/reports>`                    | Options for alert reports                                |
++-----------------------------------------------------------------------------------+----------------------------------------------------------+
+| :doc:`syslog_output <../reference/configuration/ossec-conf/syslog-output>`        | Syslog output configuration settings                     |
++-----------------------------------------------------------------------------------+----------------------------------------------------------+
 
-+--------------------------------------------------+----------------------------------------------------------+
-| Agent specific configuration options             | Description                                              |
-+==================================================+==========================================================+
-| `client <client.html>`_                          | Configuration settings for agent communications          |
-+--------------------------------------------------+----------------------------------------------------------+
-| `localfile <localfile.html>`_                    | Configuration options to monitor log files and events    |
-+--------------------------------------------------+----------------------------------------------------------+
-| `syscheck <syscheck.html>`_                      | Configuration options for file integrity monitoring      |
-+--------------------------------------------------+----------------------------------------------------------+
-| `rootcheck <rootcheck.html>`_                    | Configuration options for anomalies detection            |
-+--------------------------------------------------+----------------------------------------------------------+
-| `wodle name="open-scap" <wodle-openscap.html>`_  | Configuration settings for security policy monitoring    |
-+--------------------------------------------------+----------------------------------------------------------+
++-------------------------------------------------------------------------------------+----------------------------------------------------------+
+| Agent specific configuration options                                                | Description                                              |
++=====================================================================================+==========================================================+
+| :doc:`client <../reference/configuration/ossec-conf/client>`                        | Configuration settings for agent communications          |
++-------------------------------------------------------------------------------------+----------------------------------------------------------+
+| :doc:`localfile <../reference/configuration/ossec-conf/localfile>`                  | Configuration options to monitor log files and events    |
++-------------------------------------------------------------------------------------+----------------------------------------------------------+
+| :doc:`syscheck <../reference/configuration/ossec-conf/syscheck>`                    | Configuration options for file integrity monitoring      |
++-------------------------------------------------------------------------------------+----------------------------------------------------------+
+| :doc:`rootcheck <../reference/configuration/ossec-conf/rootcheck>`                  | Configuration options for anomalies detection            |
++-------------------------------------------------------------------------------------+----------------------------------------------------------+
+| :doc:`wodle name="open-scap" <../reference/configuration/ossec-conf/wodle-openscap>`| Configuration settings for security policy monitoring    |
++-------------------------------------------------------------------------------------+----------------------------------------------------------+
 
 Wazuh manager configuration example
 -----------------------------------
