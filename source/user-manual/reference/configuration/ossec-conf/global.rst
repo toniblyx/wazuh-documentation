@@ -56,13 +56,13 @@ This specifies the email recipient for alerts.
 
   To use granular email configurations, a base configuration is necessary in the section.
 
-	+--------------------+-------------------------+
-	| **Default Value**  | n/a                     |
-	+--------------------+-------------------------+
-	| **Allowed values** | Any valid email address |
-	+--------------------+-------------------------+
++--------------------+-------------------------+
+| **Default Value**  | n/a                     |
++--------------------+-------------------------+
+| **Allowed values** | Any valid email address |
++--------------------+-------------------------+
 
-  Use this section repeatedly for multiple email addresses, once per addresses.
+Use this section repeatedly for multiple email addresses, once per addresses.
 
 
 email_from
@@ -131,7 +131,6 @@ custom_alert_output
 ^^^^^^^^^^^^^^^^^^^
 
 This specifies the format of alerts written to ``alerts.log``. Check the allowed values for ``custom_alert_output`` in the following table:
-
 
 +---------------+----------------------------------------------------+
 | Variable name | Description                                        |
@@ -325,8 +324,8 @@ This is the full path to the MaxMind GeoIP IPv4 database file.
 | **Allowed values** | Path to the GeoIP IPv4 database file location |
 +--------------------+-----------------------------------------------+
 
-  Example
+Example
 
-  .. code-block:: xml
+.. code-block:: xml
 
-    <geoip_db_path>/etc/GeoLiteCity.dat</geoip_db_path>
+  <geoip_db_path>/etc/GeoLiteCity.dat</geoip_db_path>

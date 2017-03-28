@@ -68,13 +68,13 @@ Specify the agent.conf profile(s) to be used by the agent.
 | **Allowed values** | Multiple profiles can be included, separated by a comma and a space. |
 +--------------------+----------------------------------------------------------------------+
 
-  Example:
+Example:
 
-  .. code-block:: xml
+.. code-block:: xml
 
-     <client>
-           <config-profile>webserver, lowmemory</config-profile>
-     </client>
+   <client>
+         <config-profile>webserver, lowmemory</config-profile>
+   </client>
 
 
 notify_time
