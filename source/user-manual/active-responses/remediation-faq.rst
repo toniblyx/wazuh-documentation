@@ -13,8 +13,8 @@ Yes. You can create your own script and configure a command and active response 
 
 Can I configure active response to only one host?
 -------------------------------------------------
-Yes, using the location option. More info: :ref:`Active Response options <reference_ossec_active_response>`
+Yes, using the location option. More info: :doc:`Active Response options <../reference/configuration/ossec-conf/active-response>`
 
 Can active response remove the action after a time?
 ---------------------------------------------------
-Yes, using the *timeout_allowed* option on the command and the *timeout* option on the active response. More info: :ref:`Example <ar-examples>`
+Yes, using the *timeout_allowed* option on the command and the *timeout* option on the active response. More info: :doc:`Example <ar-examples>`
