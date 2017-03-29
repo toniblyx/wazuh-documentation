@@ -45,4 +45,3 @@ Binaries
         :maxdepth: 1
 
         daemons/index
-        tools/index

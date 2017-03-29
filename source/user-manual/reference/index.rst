@@ -5,6 +5,7 @@ Reference
 
     .. toctree::
         :maxdepth: 1
-        
+
         configuration/index
         binaries/index
+        tools/index
