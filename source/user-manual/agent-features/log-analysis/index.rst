@@ -147,7 +147,7 @@ For the previous example, rule 5715 is matched::
   </rule>
 
 .. note::
-  More information about :ref:`Wazuh Ruleset <ruleset>`
+  More information about :doc:`Wazuh Ruleset <../rules-decoders/index>`
 
 3. Alert
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
