@@ -8,9 +8,9 @@ Introduction
 
 Agents can be configured remotely by using the ``agent.conf`` file. The following capabilities can be configured remotely:
 
-- :ref:`File Integrity monitoring <manual_file_integrity>` (**syscheck**)
-- :ref:`Rootkit detection <manual_anomaly_detection>` (**rootcheck**)
-- :ref:`Log analysis <manual_log_analysis>`
+- :doc:`File Integrity monitoring <../agent-features/file-integrity/index>` (**syscheck**)
+- :doc:`Rootkit detection <../agent-features/anomalies-detection/index>` (**rootcheck**)
+- :doc:`Log analysis <../agent-features/log-analysis/index>`
 
 Below, is the proper syntax of *agent.conf* and the process of pushing the configuration from the manager to the agent.
 
