@@ -85,17 +85,7 @@ Remote syslog
 
 For other devices like firewalls, you can configure the log analysis component to receive log events through syslog.
 
-Configuration example:
-::
-
-  <ossec_config>
-    <remote>
-      <connection>syslog</connection>
-      <allowed-ips>192.168.2.0/24</allowed-ips>
-    </remote>
-  <ossec_config>
-
-``<connection>syslog</connection>`` indicates the manager will accept incoming syslog messages from across the network, and ``<allowed-ips>192.168.2.0/24</allowed-ips>`` defines the network from which syslog messages will be accepted.
+More info: :doc:`Agentless-syslog <../../agentless-monitoring/agentless-syslog>`
 
 Log Example::
 
@@ -147,7 +137,7 @@ For the previous example, rule 5715 is matched::
   </rule>
 
 .. note::
-  More information about :doc:`Wazuh Ruleset <../rules-decoders/index>`
+  More information about :doc:`Wazuh Ruleset <../../rules-decoders/index>`
 
 3. Alert
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

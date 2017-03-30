@@ -7,6 +7,7 @@ Examples
 #. `Integrity check Linux`_
 #. `Generic Diff`_
 #. `Pix config`_
+#. `Remote connection through syslog`_
 
 
 Integrity check BSD
@@ -72,3 +73,17 @@ In this example, the configuration is set to trigger an alert when a Cisco PIX o
     <host>pix@pix.fw.local</host>
     <state>periodic_diff</state>
   </agentless>
+
+Remote connection through syslog
+--------------------------------
+
+``<connection>syslog</connection>`` indicates the manager will accept incoming syslog messages from across the network, ```<allowed-ips>192.168.2.0/24</allowed-ips>`` defines the network from which syslog messages will be accepted.
+
+.. code-block:: xml
+
+  <ossec_config>
+    <remote>
+      <connection>syslog</connection>
+      <allowed-ips>192.168.2.0/24</allowed-ips>
+    </remote>
+  <ossec_config>
