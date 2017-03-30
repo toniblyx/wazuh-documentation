@@ -13,6 +13,6 @@ Installing Wazuh agent on Windows
 
 The Windows agent includes a user interface which can be used for agent configuration, log viewing, and service control.
 
-.. thumbnail:: ../../images/manual/windows-agent.png
+.. thumbnail:: ../../images/installation/windows-agent.png
     :align: center
     :width: 320 px

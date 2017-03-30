@@ -5,7 +5,7 @@ File integrity monitoring
 
 File integrity monitoring is the capability that allows us to know if any file has changed. The component responsible for this task is called **syscheck**. This component compares the cryptographic checksum and other attributes of a known good file or Windows registry key against the checksum and attributes of the same after it has been modified.
 
-Syscheck is configured in :doc:`ossec.conf <../reference/configuration/ossec-conf/index>`. It can be also configured on the centralized file :doc:`agent.conf<../agent-configuration/centralized-agent-configuration>`. If you want more information about detailed configuration options, go to :ref:`Syscheck <reference_ossec_syscheck>`. Usually you use the following sections: :ref:`frequency <reference_ossec_syscheck_frequency>`, :ref:`directories <reference_ossec_syscheck_directories>`, :ref:`ignore <reference_ossec_syscheck_ignore>`, :ref:`alert_new_files <reference_ossec_syscheck_alert_new_files>`
+Syscheck is configured in :doc:`ossec.conf <../../reference/configuration/ossec-conf/index>`. It can be also configured on the centralized file :doc:`agent.conf<../../agent-configuration/centralized-agent-configuration>`. If you want more information about detailed configuration options, go to :ref:`Syscheck <reference_ossec_syscheck>`. Usually you use the following sections: :ref:`frequency <reference_ossec_syscheck_frequency>`, :ref:`directories <reference_ossec_syscheck_directories>`, :ref:`ignore <reference_ossec_syscheck_ignore>`, :ref:`alert_new_files <reference_ossec_syscheck_alert_new_files>`
 
 
 .. topic:: Contents
