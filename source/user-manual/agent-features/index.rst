@@ -11,5 +11,5 @@ Agent features
         file-integrity/index
         anomalies-detection/index
         policy-monitoring/index
-        command-monitoring/index
+        remote-commands/index
         system-calls-monitoring/index

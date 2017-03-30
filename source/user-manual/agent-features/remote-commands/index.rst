@@ -1,11 +1,11 @@
 .. _manual_command_monitoring:
 
-Command monitoring
-==================
+Running remote commands
+=======================
 
 Sometimes what we want to monitor is not included in the logs. To solve that problem, Wazuh incorporates the ability to monitor the output of specific commands and treat that output just like log file content.
 
-Command monitoring is configured in the :ref:`localfile section<reference_ossec_localfile>` of :ref:`ossec.conf <reference_ossec_conf>`. It can be also be centrally configured in :ref:`agent.conf<reference_agent_conf>`.
+Command monitoring is configured in the :doc:`locafile <../../reference/configuration/ossec-conf/localfile>` of :doc:`ossec.conf <../../reference/configuration/ossec-conf/index>`. It can be also be centrally configured in :doc:`agent.conf <../../agent-configuration/centralized-agent-configuration>`.
 
 .. topic:: Contents
 
@@ -15,8 +15,8 @@ Command monitoring is configured in the :ref:`localfile section<reference_ossec_
         command-examples
         command-faq
 
-How it works
-------------
+Configuration
+-------------
 
 .. thumbnail:: ../../../images/manual/command-monitoring/command-monitoring.png
   :title: Command monitoring
@@ -38,7 +38,7 @@ Example::
 Configure a command to monitor
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The commands to run and monitor, can be configured either inside the local :ref:`ossec.conf <reference_ossec_conf>` of individual agents, but the ideal location would be the appropriate config section of :ref:`agent.conf <reference_agent_conf>` on the manager.
+The commands to run and monitor, can be configured either inside the local :doc:`ossec.conf <../../reference/configuration/ossec-conf/index>` of individual agents, but the ideal location would be the appropriate config section of :doc:`agent.conf <../../agent-configuration/centralized-agent-configuration>` on the manager.
 
 Example::
 
@@ -51,4 +51,4 @@ Example::
 Process the output
 ^^^^^^^^^^^^^^^^^^
 
-After configuring the system to monitor the command's output as if it were log data, we can create custom rules like for :ref:`Log analysis <manual_log_analysis>`, in order to process the output and alert when is needed.
+After configuring the system to monitor the command's output as if it were log data, we can create custom rules like for :doc:`Log analysis <../log-analysis/index>`, in order to process the output and alert when is needed.
