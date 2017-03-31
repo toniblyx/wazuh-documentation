@@ -12,15 +12,8 @@ The **OpenSCAP wodle** is an integration of `OpenSCAP <https://www.open-scap.org
 
  - Performing **specialized assessments**: OpenSCAP can perform specific custom system checks (i.e., checking for suspicious file names and suspicious file locations.)
 
-To configure the options for OpenSCAP go to :ref:`ossec.conf <reference_ossec_conf>`, or for more details about specific options, see the :ref:`OpenSCAP section <wodle_openscap>`.
+To configure the options for OpenSCAP go to :doc:`ossec.conf <../../../reference/configuration/ossec-conf/index>`, or for more details about specific options, see the :doc:`OpenSCAP section <../../../reference/configuration/ossec-conf/wodle-openscap>`.
 
-.. topic:: Documentation sections
-
-   .. toctree::
-      :maxdepth: 1
-
-      oscap-examples
-      oscap-faq
 
 How it works
 --------------------------
@@ -203,3 +196,11 @@ When the scan finishes, a report event is sent which generates an alert:
       },
       "location": "wodle_open-scap"
   }
+
+.. topic:: Documentation sections
+
+   .. toctree::
+      :maxdepth: 1
+
+      oscap-examples
+      oscap-faq
