@@ -8,7 +8,7 @@ The purpose of this process is the identification of application or system error
 
 The memory and CPU requirements of the Wazuh agent are insignificant because it mostly just forwards events to the manager.  However, on the Wazuh manager, CPU and memory consumption can increase quickly depending on the events per second (EPS) that the manager has to analyze.
 
-Log analysis is configured in :ref:`ossec.conf <reference_ossec_conf>`, mainly in the following sections: :ref:`localfile <reference_ossec_localfile>`, :ref:`remote <reference_ossec_remote>` and :ref:`global <reference_ossec_global>`. Also, it is possible to configure it in :ref:`agent.conf <reference_agent_conf>` to centralize the distribution of these configuration settings to relevant agents.
+Log analysis is configured in :doc:`ossec.conf <../../reference/configuration/ossec-conf/index>`, mainly in the following sections: :doc:`localfile <../../reference/configuration/ossec-conf/localfile>`, :doc:`remote <../../reference/configuration/ossec-conf/remote>` and :doc:`global <../../reference/configuration/ossec-conf/global>`. Also, it is possible to configure it in :doc:`agent.conf <../../agent-configuration/centralized-agent-configuration>` to centralize the distribution of these configuration settings to relevant agents.
 
 
 .. topic:: Contents

@@ -1,13 +1,13 @@
 .. _manual_anomaly_detection:
 
-Intrusion and anomaly detection
-===================================
+Anomalies detection
+===================
 
 Anomaly detection refers to the action of finding patterns in the system that do not match the expected behavior. Once malware (e.g., a rootkit) is installed on a system, it modifies the system to be hidden from the user. Although malware uses a variety of techniques for this purpose, Wazuh uses a broad spectrum approach to finding anomalous patterns that indicate possible intruders.
 
 The main component responsible for this task is *rootcheck*.  *Syscheck* also plays an important role.
 
-To configure the options for syscheck and rootcheck go to :ref:`ossec.conf <reference_ossec_conf>`. If you want more information about the exact configuration options go to :ref:`Syscheck section <reference_ossec_syscheck>` and :ref:`Rootcheck section <reference_ossec_rootcheck>`. Also see the following sections: :ref:`frequency <reference_ossec_rootcheck_frequency>`, :ref:`rootkit_files <reference_ossec_rootcheck_rootkit_files>`, :ref:`rootkit_trojans <reference_ossec_rootcheck_rootkit_trojans>`
+To configure the options for syscheck and rootcheck go to :doc:`ossec.conf <../../reference/configuration/ossec-conf/index>`. If you want more information about the exact configuration options go to :doc:`Syscheck section <../../reference/configuration/ossec-conf/syscheck>` and :doc:`Rootcheck section <../../reference/configuration/ossec-conf/rootcheck>`. Also see the following sections: :ref:`frequency <reference_ossec_rootcheck_frequency>`, :ref:`rootkit_files <reference_ossec_rootcheck_rootkit_files>`, :ref:`rootkit_trojans <reference_ossec_rootcheck_rootkit_trojans>`
 
 .. topic:: Contents
 
