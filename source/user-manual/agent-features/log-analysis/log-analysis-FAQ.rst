@@ -57,7 +57,7 @@ This depends on your needs. Once you know the format of your application logs an
 Can I ignore events that are not important?
 -----------------------------------------------------
 
-You can configure the rules to ignore certain events. More info: :doc:`Custom rules <../rules-decoders/index>`
+You can configure the rules to ignore certain events. More info: :doc:`Custom rules <../../rules-decoders/index>`
 
 Can I check if an application is running on an agent?
 ----------------------------------------------------------

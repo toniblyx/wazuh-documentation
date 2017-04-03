@@ -21,7 +21,7 @@ Welcome to the Wazuh user manual. Here you can learn how to configure and manage
         agent-features/index
         agentless-monitoring/index
         rules-decoders/index
-        active-responses/index
+        automatic-remediation/index
         output-options/index
         restful-api/index
         reference/index

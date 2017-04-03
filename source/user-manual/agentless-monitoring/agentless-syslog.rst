@@ -1,7 +1,7 @@
 Collecting remote Syslog
 ========================
 
-For other devices like firewalls, you can configure Wazuh manager to receive log events through syslog. This need to be configured in the :doc:`ossec.conf <../reference/configuration/ossec-conf/index>`using the :doc:`Remote <../reference/configuration/ossec-conf/remote>` option.
+For other devices like firewalls, you can configure Wazuh manager to receive log events through syslog. This need to be configured in the :doc:`ossec.conf <../reference/configuration/ossec-conf/index>` using the :doc:`Remote <../reference/configuration/ossec-conf/remote>` option.
 
 Configuration example:
 ::
