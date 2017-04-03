@@ -16,7 +16,7 @@ Welcome to the Wazuh user manual. Here you can learn how to configure and manage
 
         overview/index
         manager-configuration/index
-        agents-management/index
+        agent-management/index
         agent-configuration/index
         agent-features/index
         agentless-monitoring/index
