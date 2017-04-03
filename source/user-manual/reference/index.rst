@@ -7,5 +7,5 @@ Reference
         :maxdepth: 1
 
         configuration/index
-        binaries/index
+        daemons/index
         tools/index

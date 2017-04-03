@@ -10,37 +10,37 @@ Daemons
 |                                                   |                                                                 |                             |
 |                                                   | with the server                                                 |                             |
 +---------------------------------------------------+-----------------------------------------------------------------+-----------------------------+
-| :doc:`ossec-agentlessd <ossec-agentlessd>`        | Runs integrity checking on systems without                      | Server, local               |
+| :doc:`ossec-agentlessd <ossec-agentlessd>`        | Runs integrity checking on systems without                      | manager                     |
 |                                                   |                                                                 |                             |
 |                                                   | an agent installed                                              |                             |
 +---------------------------------------------------+-----------------------------------------------------------------+-----------------------------+
-| :doc:`ossec-analysisd <ossec-analysisd>`          | Receives log messages and compares                              | Server, local               |
+| :doc:`ossec-analysisd <ossec-analysisd>`          | Receives log messages and compares                              | manager                     |
 |                                                   |                                                                 |                             |
 |                                                   | them to the rules                                               |                             |
 +---------------------------------------------------+-----------------------------------------------------------------+-----------------------------+
-| :doc:`ossec-authd <ossec-authd>`                  | Adds agents to Wazuh manager                                    | Server                      |
+| :doc:`ossec-authd <ossec-authd>`                  | Adds agents to Wazuh manager                                    | manager                     |
 +---------------------------------------------------+-----------------------------------------------------------------+-----------------------------+
-| :doc:`ossec-csyslogd <ossec-csyslogd>`            | Forwards Wazuh alerts via syslog                                | Server, local               |
+| :doc:`ossec-csyslogd <ossec-csyslogd>`            | Forwards Wazuh alerts via syslog                                | manager                     |
 +---------------------------------------------------+-----------------------------------------------------------------+-----------------------------+
-| :doc:`ossec-dbd <ossec-dbd>`                      | Inserts alert logs into a database                              | Server, local               |
+| :doc:`ossec-dbd <ossec-dbd>`                      | Inserts alert logs into a database                              | manager                     |
 +---------------------------------------------------+-----------------------------------------------------------------+-----------------------------+
-| :doc:`ossec-execd <ossec-execd>`                  | Executes active responses                                       | Server, local, agent        |
+| :doc:`ossec-execd <ossec-execd>`                  | Executes active responses                                       | manager, agent              |
 +---------------------------------------------------+-----------------------------------------------------------------+-----------------------------+
-| :doc:`ossec-logcollector <ossec-logcollector>`    | Monitors configured files and commands for                      | Server, local, agent        |
+| :doc:`ossec-logcollector <ossec-logcollector>`    | Monitors configured files and commands for                      | manager, agent              |
 |                                                   |                                                                 |                             |
 |                                                   | new log messages                                                |                             |
 +---------------------------------------------------+-----------------------------------------------------------------+-----------------------------+
-| :doc:`ossec-maild <ossec-maild>`                  | Sends Wazuh alerts via email                                    | Server, local               |
+| :doc:`ossec-maild <ossec-maild>`                  | Sends Wazuh alerts via email                                    | manager                     |
 +---------------------------------------------------+-----------------------------------------------------------------+-----------------------------+
-| :doc:`ossec-monitord <ossec-monitord>`            | Monitors agent connectivity and compresses log files            | Server, local               |
+| :doc:`ossec-monitord <ossec-monitord>`            | Monitors agent connectivity and compresses log files            | manager                     |
 +---------------------------------------------------+-----------------------------------------------------------------+-----------------------------+
-| :doc:`ossec-remoted <ossec-remoted>`              | Communicates with agents                                        | Server                      |
+| :doc:`ossec-remoted <ossec-remoted>`              | Communicates with agents                                        | manager                     |
 +---------------------------------------------------+-----------------------------------------------------------------+-----------------------------+
-| :doc:`ossec-reportd <ossec-reportd>`              | Creates reports from Wazuh alerts                               | Server, local               |
+| :doc:`ossec-reportd <ossec-reportd>`              | Creates reports from Wazuh alerts                               | manager                     |
 +---------------------------------------------------+-----------------------------------------------------------------+-----------------------------+
-| :doc:`ossec-syscheckd <ossec-syscheckd>`          | Checks configured files for security changes                    | Server, local, agent        |
+| :doc:`ossec-syscheckd <ossec-syscheckd>`          | Checks configured files for security changes                    | manager, agent              |
 +---------------------------------------------------+-----------------------------------------------------------------+-----------------------------+
-| :doc:`wazuh-modulesd <wazuh-modulesd>`            | Wazuh module manager                                            | Server, agent               |
+| :doc:`wazuh-modulesd <wazuh-modulesd>`            | Wazuh module manager                                            | manager, agent              |
 +---------------------------------------------------+-----------------------------------------------------------------+-----------------------------+
 
 
