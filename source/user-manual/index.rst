@@ -14,15 +14,7 @@ Welcome to the Wazuh user manual. Use it as your Wazuh reference library once yo
 
         overview
         management/index
-        configuration/index
-        log-analysis/index
-        file-integrity/index
-        anomalies-detection/index
-        policy-monitoring/index
-        command-monitoring/index
-        automatic-remediation/index
-        system-calls-monitoring/index
-        agentless-monitoring/index
-        binaries/index
+        agent-features/index
         ruleset/index
         api/index
+        reference/index

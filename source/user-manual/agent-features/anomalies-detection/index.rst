@@ -1,6 +1,6 @@
 .. _manual_anomaly_detection:
 
-Intrusion and anomaly detection
+Anomaly detection
 ===================================
 
 Anomaly detection refers to the action of finding patterns in the system that do not match the expected behavior. Once malware (e.g., a rootkit) is installed on a system, it modifies the system to be hidden from the user. Although malware uses a variety of techniques for this purpose, Wazuh uses a broad spectrum approach to finding anomalous patterns that indicate possible intruders.
@@ -22,7 +22,7 @@ How it works
 
 This section describes the checks performed by Wazuh to find the anomalies caused by an intruder or malware.
 
-.. thumbnail:: ../../images/manual/intrusion-anomaly/rootcheck-flow.png
+.. thumbnail:: ../../../images/manual/intrusion-anomaly/rootcheck-flow.png
   :title: Intrusion and anomaly detection
   :align: center
   :width: 100%
