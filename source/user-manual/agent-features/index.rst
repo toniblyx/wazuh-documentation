@@ -13,3 +13,4 @@ Agent features
         automatic-remediation/index
         command-monitoring/index
         system-calls-monitoring/index
+        faqs
