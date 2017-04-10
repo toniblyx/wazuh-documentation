@@ -13,7 +13,7 @@ Listing agents using Wazuh app
 --------------------------------
 Acces to the Wazuh app and go to *Agents* tab:
 
-.. thumbnail:: ../../images/manual/managing-agents/listing-agents-app.png
+.. thumbnail:: ../../../images/manual/managing-agents/listing-agents-app.png
     :title: Listing agents from Wazuh app
     :align: center
     :width: 100%

@@ -12,8 +12,9 @@ Welcome to the Wazuh user manual. Use it as your Wazuh reference library once yo
     .. toctree::
         :maxdepth: 1
 
+        overview
+        management/index
         configuration/index
-        managing-agents/index
         log-analysis/index
         file-integrity/index
         anomalies-detection/index
@@ -22,7 +23,6 @@ Welcome to the Wazuh user manual. Use it as your Wazuh reference library once yo
         automatic-remediation/index
         system-calls-monitoring/index
         agentless-monitoring/index
-        forwarding-alerts/index
         binaries/index
         ruleset/index
         api/index

@@ -13,4 +13,3 @@ This part of the user manual will cover the configuration files used by Wazuh an
 
        ossec-conf/index
        internal-options
-       centralized-agent-configuration.rst
