@@ -14,16 +14,6 @@ The **OpenSCAP wodle** is an integration of `OpenSCAP <https://www.open-scap.org
 
 To configure the options for OpenSCAP go to :ref:`ossec.conf <reference_ossec_conf>`, or for more details about specific options, see the :ref:`OpenSCAP section <wodle_openscap>`.
 
-.. topic:: Documentation sections
-
-   .. toctree::
-      :maxdepth: 1
-
-      oscap-examples
-      oscap-faq
-
-How it works
---------------------------
 
 The `Security Content Automation Protocol (SCAP) <https://scap.nist.gov/>`_ is a specification for expressing and manipulating security data in standardized ways. SCAP jointly uses several specifications in order to automate continuous monitoring, vulnerability management, and reporting on results of security compliance scans.
 
@@ -39,7 +29,7 @@ Components of the security compliance evaluation process:
 
 
 Requirements
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------
 
 This wodle is executed on the agent, so each agent must meet the following requirements:
 
@@ -58,7 +48,7 @@ This wodle is executed on the agent, so each agent must meet the following requi
     Python is a core part of this wodle. Currently all Linux distributions come with python, so it should not be an inconvenience.
 
 Default policies
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------
 
 These are the Security Policy includes by default on Wazuh:
 
@@ -87,7 +77,7 @@ These are the Security Policy includes by default on Wazuh:
 Each agent must have its policies in ``/var/ossec/wodles/oscap/policies``.
 
 Wodle flow
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 
 .. thumbnail:: ../../../../images/manual/policy-compliance/openscap-flow.png
   :title: OpenSCAP
@@ -203,3 +193,12 @@ When the scan finishes, a report event is sent which generates an alert:
       },
       "location": "wodle_open-scap"
   }
+
+
+.. topic:: Documentation sections
+
+  .. toctree::
+     :maxdepth: 1
+
+     oscap-examples
+     oscap-faq

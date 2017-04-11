@@ -82,7 +82,7 @@ How does this help me with regulatory compliance?
 Log analysis is a requirement for : :ref:`PCI DSS Compliance <pci_dss_log_analysis>`,  HIPAA Compliance, FISMA Compliance and SOX Compliance.
 
 What is the CPU usage like on the agents for log analysis?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The memory and CPU requirements of the agent are insignificant because it mostly just forwards events to the manager.  However, on the manager, CPU and memory consumption can increase quickly depending on the events per second (EPS) that the manager has to analyze.
 

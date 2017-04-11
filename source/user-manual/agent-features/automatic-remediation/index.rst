@@ -10,33 +10,15 @@ Any number of scripts can be initiated in response to a trigger, however these r
 
 Active response is configured in :ref:`ossec.conf <reference_ossec_conf>`, within the :ref:`Active Response <reference_ossec_active_response>` and :ref:`Command <reference_ossec_commands>` sections.
 
-.. topic:: Contents
-
-    .. toctree::
-        :maxdepth: 1
-
-        remediation-examples
-        remediation-faq
-
-How it works
-------------
-
 .. thumbnail:: ../../../images/manual/automatic-remediation/automatic-remediation.png
   :title: Command monitoring
   :align: center
   :width: 100%
 
 
-1. When is an active response triggered?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 An active response can be triggered by a specific alert, alert level or rule group as configured in the ossec.conf file, where a script is configured to execute with a certain rule/group.  **Active responses** are either stateful or stateless responses.  Stateful responses will undo the action after a specified period of time while stateless responses are one-time actions.
 
-2. Where are active response actions executed?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Active response specify where their associated commanda will be executed: on the agent that triggered the alert, on the manager, on another specified agent, or on all agents plus the manager.
-
-3. Active response configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 An active response is configured in :ref:`ossec.conf <reference_ossec_conf>` as follows:
 
@@ -83,37 +65,43 @@ An active response is configured in :ref:`ossec.conf <reference_ossec_conf>` as 
 
 You can view the active response log at ``/var/ossec/logs/active-response.log``.
 
-4. Default Active response scripts
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Default Active response scripts
+    Wazuh is preconfigured with the following scripts:
 
-Wazuh is preconfigured with the following scripts:
+    +--------------------------+---------------------------------------------------------------+
+    | Script name              |                          Description                          |
+    +==========================+===============================================================+
+    | dissable-account.sh      | disables an account by setting ``passwd-l``                   |
+    +--------------------------+---------------------------------------------------------------+
+    | firewall-drop.sh         | adds an IP to the iptables deny list                          |
+    +--------------------------+---------------------------------------------------------------+
+    | firewalld-drop.sh        | adds an IP to firewalld drop list                             |
+    +--------------------------+---------------------------------------------------------------+
+    | host-deny.sh             | adds an IP to the /etc/hosts.deny file                        |
+    +--------------------------+---------------------------------------------------------------+
+    | ip-customblock.sh        | Custom OSSEC block, easily modifiable for custom response     |
+    +--------------------------+---------------------------------------------------------------+
+    | ipfw_mac.sh              | Firewall-drop response script created for the Mac OS          |
+    +--------------------------+---------------------------------------------------------------+
+    | ipfw.sh                  | Firewall-drop response script created for ipfw                |
+    +--------------------------+---------------------------------------------------------------+
+    | npf.sh                   | Firewall-drop response script created for npf                 |
+    +--------------------------+---------------------------------------------------------------+
+    | ossec-slack.sh           | in order to post modifications                                |
+    +--------------------------+---------------------------------------------------------------+
+    | ossec-tweeter.sh         | in order to post modifications                                |
+    +--------------------------+---------------------------------------------------------------+
+    | pf.sh                    | Firewall-drop response script created for pf                  |
+    +--------------------------+---------------------------------------------------------------+
+    | restart-ossec.sh         | Automatically restarts Wazuh when ossec.conf has been changed |
+    +--------------------------+---------------------------------------------------------------+
+    | route-null.sh            | Adds an IP to null route                                      |
+    +--------------------------+---------------------------------------------------------------+
 
-+--------------------------+---------------------------------------------------------------+
-| Script name              |                          Description                          |
-+==========================+===============================================================+
-| dissable-account.sh      | disables an account by setting ``passwd-l``                   |
-+--------------------------+---------------------------------------------------------------+
-| firewall-drop.sh         | adds an IP to the iptables deny list                          |
-+--------------------------+---------------------------------------------------------------+
-| firewalld-drop.sh        | adds an IP to firewalld drop list                             |
-+--------------------------+---------------------------------------------------------------+
-| host-deny.sh             | adds an IP to the /etc/hosts.deny file                        |
-+--------------------------+---------------------------------------------------------------+
-| ip-customblock.sh        | Custom OSSEC block, easily modifiable for custom response     |
-+--------------------------+---------------------------------------------------------------+
-| ipfw_mac.sh              | Firewall-drop response script created for the Mac OS          |
-+--------------------------+---------------------------------------------------------------+
-| ipfw.sh                  | Firewall-drop response script created for ipfw                |
-+--------------------------+---------------------------------------------------------------+
-| npf.sh                   | Firewall-drop response script created for npf                 |
-+--------------------------+---------------------------------------------------------------+
-| ossec-slack.sh           | in order to post modifications                                |
-+--------------------------+---------------------------------------------------------------+
-| ossec-tweeter.sh         | in order to post modifications                                |
-+--------------------------+---------------------------------------------------------------+
-| pf.sh                    | Firewall-drop response script created for pf                  |
-+--------------------------+---------------------------------------------------------------+
-| restart-ossec.sh         | Automatically restarts Wazuh when ossec.conf has been changed |
-+--------------------------+---------------------------------------------------------------+
-| route-null.sh            | Adds an IP to null route                                      |
-+--------------------------+---------------------------------------------------------------+
+.. topic:: Contents
+
+    .. toctree::
+        :maxdepth: 1
+
+        remediation-examples
+        remediation-faq

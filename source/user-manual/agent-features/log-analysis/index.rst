@@ -11,16 +11,7 @@ The memory and CPU requirements of the Wazuh agent are insignificant because it 
 Log analysis is configured in :ref:`ossec.conf <reference_ossec_conf>`, mainly in the following sections: :ref:`localfile <reference_ossec_localfile>`, :ref:`remote <reference_ossec_remote>` and :ref:`global <reference_ossec_global>`. Also, it is possible to configure it in :ref:`agent.conf <reference_agent_conf>` to centralize the distribution of these configuration settings to relevant agents.
 
 
-.. topic:: Contents
 
-    .. toctree::
-        :maxdepth: 1
-
-        log-analysis-examples
-        log-analysis-FAQ
-
-How it works
--------------------------------------
 
 The below figure illustrates the event flow:
 
@@ -29,142 +20,144 @@ The below figure illustrates the event flow:
     :align: center
     :width: 100%
 
-1. Log collection
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The log source can be:
-
-Log files
-~~~~~~~~~~~~~~~~~~~~~~~
-The Log analysis engine can be configured to monitor specific files on the servers.
-
-Configuration example:
-
-Linux:
-::
-
-    <localfile>
-        <location>/var/log/example.log</location>
-        <log_format>syslog</log_format>
-    </localfile>
-
-Windows:
-::
-
-    <localfile>
-        <location>C:\myapp\example.log</location>
-        <log_format>syslog</log_format>
-    </localfile>
+#. Log collection
 
 
-Windows event log
-~~~~~~~~~~~~~~~~~~~~~~~
+    The log source can be:
 
-Wazuh can monitor classic Windows event logs, as well as the newer Windows event channels:
+    - Log files
 
-Configuration example:
+      The Log analysis engine can be configured to monitor specific files on the servers.
 
-Event log:
-::
+      Configuration example:
 
-  <localfile>
-    <location>Security</location>
-    <log_format>eventlog</log_format>
-  </localfile>
+      Linux:
+      ::
 
-Event channel:
-::
+          <localfile>
+              <location>/var/log/example.log</location>
+              <log_format>syslog</log_format>
+          </localfile>
 
-  <localfile>
-    <location>Microsoft-Windows-PrintService/Operational</location>
-    <log_format>eventchannel</log_format>
-  </localfile>
+      Windows:
+      ::
 
-Remote syslog
-~~~~~~~~~~~~~~~~~~~~~~~
+          <localfile>
+              <location>C:\myapp\example.log</location>
+              <log_format>syslog</log_format>
+          </localfile>
 
-For other devices like firewalls, you can configure the log analysis component to receive log events through syslog.
 
-Configuration example:
-::
+    - Windows event log
 
-  <ossec_config>
-    <remote>
-      <connection>syslog</connection>
-      <allowed-ips>192.168.2.0/24</allowed-ips>
-    </remote>
-  <ossec_config>
+      Wazuh can monitor classic Windows event logs, as well as the newer Windows event channels:
 
-``<connection>syslog</connection>`` indicates the manager will accept incoming syslog messages from across the network, and ``<allowed-ips>192.168.2.0/24</allowed-ips>`` defines the network from which syslog messages will be accepted.
+      Configuration example:
 
-Log Example::
+      Event log:
+      ::
 
-  2016-03-15T15:22:10.078830+01:00 tron su:pam_unix(su-l:auth):authentication failure;logname=tm uid=500 euid=0 tty=pts/0 ruser=tm rhost= user=root
-  1265939281.764 1 172.16.167.228 TCP_DENIED /403 734 POST http://lbcore1.metacafe.com/test/SystemInfoManager.php - NONE/- text/html
-  [Sun Mar 06 08:52:16 2016] [error] [client 187.172.181.57] Invalid URI in request GET: index.php HTTP/1.0
+        <localfile>
+          <location>Security</location>
+          <log_format>eventlog</log_format>
+        </localfile>
 
-2. Analysis
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      Event channel:
+      ::
 
-Pre-decoding
-~~~~~~~~~~~~~~~~~~~~~~~
+        <localfile>
+          <location>Microsoft-Windows-PrintService/Operational</location>
+          <log_format>eventchannel</log_format>
+        </localfile>
 
-In this phase, only static information is extracted from well-known fields.
+    - Remote syslog
 
-::
+      For other devices like firewalls, you can configure the log analysis component to receive log events through syslog.
 
-  Feb 14 12:19:04 localhost sshd[25474]: Accepted password for rromero from 192.168.1.133 port 49765 ssh2
+      Configuration example:
+      ::
 
-Extracted information:
-  - *hostname*: 'localhost'
-  - *program_name*: 'sshd'
+        <ossec_config>
+          <remote>
+            <connection>syslog</connection>
+            <allowed-ips>192.168.2.0/24</allowed-ips>
+          </remote>
+        <ossec_config>
 
-Decoding
-~~~~~~~~~~~~~~~~~~~~~~~
+      ``<connection>syslog</connection>`` indicates the manager will accept incoming syslog messages from across the network, and ``<allowed-ips>192.168.2.0/24</allowed-ips>`` defines the network from which syslog messages will be accepted.
 
-The Decode phase identifies/evaluates the type of a log message and then extracts known fields for that message type. Example of a log and its extracted info:
-::
+      Log Example::
 
-  Feb 14 12:19:04 localhost sshd[25474]: Accepted password for rromero from 192.168.1.133 port 49765 ssh2
+        2016-03-15T15:22:10.078830+01:00 tron su:pam_unix(su-l:auth):authentication failure;logname=tm uid=500 euid=0 tty=pts/0 ruser=tm rhost= user=root
+        1265939281.764 1 172.16.167.228 TCP_DENIED /403 734 POST http://lbcore1.metacafe.com/test/SystemInfoManager.php - NONE/- text/html
+        [Sun Mar 06 08:52:16 2016] [error] [client 187.172.181.57] Invalid URI in request GET: index.php HTTP/1.0
 
-Extracted information:
-  - *program name*: sshd
-  - *dstuser*: rromero
-  - *srcip*: 192.168.1.133
+#. Analysis
 
-Rule matching
-~~~~~~~~~~~~~~~~~~~~~~~
 
-The next step is to check if any of the rules match.
+    - Pre-decoding
 
-For the previous example, rule 5715 is matched::
+      In this phase, only static information is extracted from well-known fields.
 
-  <rule id="5715" level="3">
-    <if_sid>5700</if_sid>
-    <match>^Accepted|authenticated.$</match>
-    <description>sshd: authentication success.</description>
-    <group>authentication_success,pci_dss_10.2.5,</group>
-  </rule>
+      ::
 
-.. note::
-  More information about :ref:`Wazuh Ruleset <ruleset>`
+        Feb 14 12:19:04 localhost sshd[25474]: Accepted password for rromero from 192.168.1.133 port 49765 ssh2
 
-3. Alert
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      Extracted information:
+        - *hostname*: 'localhost'
+        - *program_name*: 'sshd'
 
-Once the rule is matched, the manager will create an alert::
+    - Decoding
 
-  ** Alert 1487103546.21448: - syslog,sshd,authentication_success,pci_dss_10.2.5,
-  2017 Feb 14 12:19:06 localhost->/var/log/secure
-  Rule: 5715 (level 3) -> 'sshd: authentication success.'
-  Src IP: 192.168.1.133
-  User: rromero
-  Feb 14 12:19:04 localhost sshd[25474]: Accepted password for rromero from 192.168.1.133 port 49765 ssh2
+      The Decode phase identifies/evaluates the type of a log message and then extracts known fields for that message type. Example of a log and its extracted info:
+      ::
 
-It will be stored in */var/ossec/logs/alerts/alerts.json* and/or */var/ossec/logs/alerts/alerts.log*.
+        Feb 14 12:19:04 localhost sshd[25474]: Accepted password for rromero from 192.168.1.133 port 49765 ssh2
 
-By default, it will generate alerts on events that are important or of security relevance. To store all events even if they do not match a rule, you need to enable the ``<log_all>`` option.
+      Extracted information:
+        - *program name*: sshd
+        - *dstuser*: rromero
+        - *srcip*: 192.168.1.133
 
-Alerts will be stored at */var/ossec/logs/alerts/alerts.(json|log)* and events at */var/ossec/logs/archives/archives.(json|log)*. It uses log rotation and creates an individual directory for each year and month.
+    - Rule matching
 
-Archived logs are not automatically deleted.  You choose when to manually or automatically (i.e., cron job) delete logs according to your own legal and regulatory requirements.
+      The next step is to check if any of the rules match.
+
+      For the previous example, rule 5715 is matched::
+
+        <rule id="5715" level="3">
+          <if_sid>5700</if_sid>
+          <match>^Accepted|authenticated.$</match>
+          <description>sshd: authentication success.</description>
+          <group>authentication_success,pci_dss_10.2.5,</group>
+        </rule>
+
+      .. note::
+        More information about :ref:`Wazuh Ruleset <ruleset>`
+
+#. Alert
+
+      Once the rule is matched, the manager will create an alert::
+
+        ** Alert 1487103546.21448: - syslog,sshd,authentication_success,pci_dss_10.2.5,
+        2017 Feb 14 12:19:06 localhost->/var/log/secure
+        Rule: 5715 (level 3) -> 'sshd: authentication success.'
+        Src IP: 192.168.1.133
+        User: rromero
+        Feb 14 12:19:04 localhost sshd[25474]: Accepted password for rromero from 192.168.1.133 port 49765 ssh2
+
+      It will be stored in */var/ossec/logs/alerts/alerts.json* and/or */var/ossec/logs/alerts/alerts.log*.
+
+      By default, it will generate alerts on events that are important or of security relevance. To store all events even if they do not match a rule, you need to enable the ``<log_all>`` option.
+
+      Alerts will be stored at */var/ossec/logs/alerts/alerts.(json|log)* and events at */var/ossec/logs/archives/archives.(json|log)*. It uses log rotation and creates an individual directory for each year and month.
+
+      Archived logs are not automatically deleted.  You choose when to manually or automatically (i.e., cron job) delete logs according to your own legal and regulatory requirements.
+
+.. topic:: Contents
+
+    .. toctree::
+        :maxdepth: 1
+
+        log-analysis-examples
+        log-analysis-FAQ

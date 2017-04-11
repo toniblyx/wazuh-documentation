@@ -7,18 +7,6 @@ Wazuh monitors configuration files to ensure they are compliant with your securi
 
 To configure the options for rootcheck, go to the :ref:`Rootcheck section <reference_ossec_rootcheck>` in :ref:`ossec.conf <reference_ossec_conf>`. The most common configuration options are: :ref:`frequency <reference_ossec_rootcheck_frequency>` and :ref:`system-audit <reference_ossec_rootcheck_audit>`
 
-
-.. topic:: Documentation sections
-
-    .. toctree::
-       :maxdepth: 1
-
-       rootcheck-examples
-       rootcheck-faq
-
-How it works
-------------
-
 *Rootcheck* allows to define policies in order to check if the agents meet the requirement specified.
 
 .. thumbnail:: ../../../../images/manual/policy-compliance/rootcheck-compliance.png
@@ -88,3 +76,11 @@ Alert example::
  System Audit: CIS - RHEL7 - 6.2.9 - SSH Configuration - Empty passwords permitted {CIS: 6.2.9 RHEL7} {PCI_DSS: 4.1}. File: /etc/ssh/sshd_config. Reference: https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_7_Benchmark_v1.1.0.pdf .
  title: CIS - RHEL7 - 6.2.9 - SSH Configuration - Empty passwords permitted
  file: /etc/ssh/sshd_config
+
+.. topic:: Documentation sections
+
+   .. toctree::
+      :maxdepth: 1
+
+      rootcheck-examples
+      rootcheck-faq
