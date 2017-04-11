@@ -14,7 +14,7 @@ Welcome to the Wazuh user manual. Use it as your Wazuh reference library once yo
 
         overview
         management/index
+        manager-features/index
         agent-features/index
-        ruleset/index
-        api/index
+        agentless-features/index
         reference/index

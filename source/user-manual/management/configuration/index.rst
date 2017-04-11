@@ -12,4 +12,5 @@ This part of the user manual will cover the configuration files used by Wazuh an
        :maxdepth: 1
 
        ossec-conf/index
+       centralized-agent-configuration
        internal-options

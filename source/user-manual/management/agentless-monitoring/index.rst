@@ -1,7 +1,7 @@
 .. _manual_agentless:
 
 
-Agentless monitoring
+Manage agentless
 ======================
 
 Agentless monitoring allows you to monitor devices or systems with no agent using SSH, such as: routers, firewalls, switches and linux/bsd systems.
@@ -64,7 +64,7 @@ The four types of agentless checks.
 
 BSD Integrity Check
 ~~~~~~~~~~~~~~~~~~~
-For BSD systems, set the ``type`` as ``ssh_integrity_check_bsd`` as referenced below.  A space-separated list of directories may be referenced in the configuration section using the arguments tag.  Using this configuration, Wazuh will do an integrity check on the remote box. 
+For BSD systems, set the ``type`` as ``ssh_integrity_check_bsd`` as referenced below.  A space-separated list of directories may be referenced in the configuration section using the arguments tag.  Using this configuration, Wazuh will do an integrity check on the remote box.
 ::
 
   <agentless>
@@ -124,7 +124,7 @@ This option will alert if a Cisco PIX/router configuration changes. Set the ``ty
 3. Checking the setup
 ^^^^^^^^^^^^^^^^^^^^^
 
-Finally,the ``expect`` package must be present on the manager for this feature to work. 
+Finally,the ``expect`` package must be present on the manager for this feature to work.
 
 When the ``expect`` package is present and Wazuh is restarted, the following is shown in the ``/var/ossec/logs/ossec.log`` file:
 

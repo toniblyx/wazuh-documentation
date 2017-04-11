@@ -1,14 +1,12 @@
 Management
 ==========
 
-Getting started
-
 
 .. topic:: Contents
 
     .. toctree::
         :maxdepth: 1
 
-        agent/index
-        manager/index
+        configuration/index
+        manage-agents/index
         agentless-monitoring/index

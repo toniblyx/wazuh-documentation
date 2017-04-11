@@ -4,8 +4,7 @@ Reference
 .. topic:: Contents
 
     .. toctree::
-        :maxdepth: 1
+        :maxdepth: 2
 
-        configuration/index
         daemons/index
         tools/index
