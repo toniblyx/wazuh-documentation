@@ -8,10 +8,23 @@ The purpose of this process is the identification of application or system error
 
 The memory and CPU requirements of the Wazuh agent are insignificant because it mostly just forwards events to the manager.  However, on the Wazuh manager, CPU and memory consumption can increase quickly depending on the events per second (EPS) that the manager has to analyze.
 
+
+
+Reference
+---------
+
 Log analysis is configured in :ref:`ossec.conf <reference_ossec_conf>`, mainly in the following sections: :ref:`localfile <reference_ossec_localfile>`, :ref:`remote <reference_ossec_remote>` and :ref:`global <reference_ossec_global>`. Also, it is possible to configure it in :ref:`agent.conf <reference_agent_conf>` to centralize the distribution of these configuration settings to relevant agents.
 
+Here we can see a simple configuration, in order to monitor the ``/var/log/messages`` log with ``syslog`` format.
+::
 
+  <localfile>
+      <location>/var/log/messages</location>
+      <log_format>syslog</log_format>
+  </localfile>
 
+How it works
+------------
 
 The below figure illustrates the event flow:
 
@@ -154,10 +167,9 @@ The below figure illustrates the event flow:
 
       Archived logs are not automatically deleted.  You choose when to manually or automatically (i.e., cron job) delete logs according to your own legal and regulatory requirements.
 
-.. topic:: Contents
 
-    .. toctree::
-        :maxdepth: 1
+.. toctree::
+    :maxdepth: 2
 
-        log-analysis-examples
-        log-analysis-FAQ
+    log-analysis-examples
+    log-analysis-FAQ
