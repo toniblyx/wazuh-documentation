@@ -9,4 +9,4 @@ Management
 
         configuration/index
         manage-agents/index
-        agentless-monitoring/index
+        manage-agentless/index
